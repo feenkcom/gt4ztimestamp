@@ -147,7 +147,12 @@ ZTimezone class >> gtViewTimezoneIdentifiersFor: aView [
 									indexOf: targetTimezone id) ].
 						anActOnEvent beActed ];
 					asElement ]
-			tooltip: 'Search timezone identifiers'
+			tooltip: 'Search timezone identifiers';
+		contextItemLabel: 'Set as default image timezone' 
+			action: [ :element :item | 
+				ZTimezone current: (ZTimezone id: item).
+				self inform: ('image timezone set to {1}' format: { item }).
+				"element phlow update" "current tab ?" ]
 ]
 
 { #category : #'*GToolkit4ZTimestamp' }

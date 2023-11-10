@@ -34,20 +34,20 @@ ZTeamCoordinatorMember >> gtViewDetailsIn: composite [
 	^ composite columnedList
 		title: 'Details';
 		items: [ {
-			('name' -> self name).
-			('timezone' -> self timezone id).
-			('clock' -> ((ZTimestampFormat fromString: '16:05') 
+			{ 'name' . self name }.
+			{ 'timezone' . self timezone id . self timezone }.
+			{ 'clock' . ((ZTimestampFormat fromString: '16:05') 
 				timezone: self timezone; 
-				format: now )).
-			('offset' -> ((ZTimestampFormat fromString: 'GMT+00:00') 
+				format: now ) }.
+			{ 'offset' . ((ZTimestampFormat fromString: 'GMT+00:00') 
 				timezone: self timezone; 
-				format: now)).
-			('difference' -> (difference isZero 
+				format: now) }.
+			{ 'difference' . (difference isZero 
 				ifTrue: [ 0 ]
-				ifFalse: [ difference humanReadablePrintString ]))} ];
-		column: 'Key' text: #key;
-		column: 'Value' text: #value;
-		send: #value
+				ifFalse: [ difference humanReadablePrintString ]) . difference } } ];
+		column: 'Key' text: #first;
+		column: 'Value' text: #second;
+		send: #last
 ]
 
 { #category : #accessing }
