@@ -1,8 +1,18 @@
+"
+The GToolkit4ZTimestamp project adds GToolkit extensions to the ZTimestamp project.
+
+More efficient UTC/GMT timestamps, Olsen timezone database support, example based formatter and parser, SNTP client.
+"
 Class {
 	#name : #BaselineOfGToolkit4ZTimestamp,
 	#superclass : #BaselineOf,
 	#category : #BaselineOfGToolkit4ZTimestamp
 }
+
+{ #category : #accessing }
+BaselineOfGToolkit4ZTimestamp class >> gtDependencyAnalysisPreloadedBaselines [
+	^ super gtDependencyAnalysisPreloadedBaselines , { BaselineOfGToolkit4Pharo . BaselineOfGToolkitSpotter }
+]
 
 { #category : #loading }
 BaselineOfGToolkit4ZTimestamp class >> loadLepiter [
