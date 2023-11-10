@@ -23,6 +23,7 @@ BaselineOfGToolkit4ZTimestamp class >> loadLepiter [
 BaselineOfGToolkit4ZTimestamp >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'GToolkit4ZTimestamp'
+			spec baseline: 'ZTimestamp' with: [ spec repository: 'github://svenvc/ztimestamp:master/repository' ].
+			spec package: 'GToolkit4ZTimestamp' with: [ spec requires: #('ZTimestamp') ].
 		]
 ]
