@@ -34,9 +34,9 @@ GToolkit4ZTimestampExamples class >> mixedArithmetic [
 	<gtExample>
 	| t1 t2 delta |
 	t1 := ZTimestamp fromString: '20231101T100000'.
-	t2 := DateAndTime fromString: '2023/10/01 09:00:00'.
+	t2 := DateAndTime fromString: '2023/10/01 09:00:00+00:00'.
 	delta := t1 - t2.
-	self assert: delta equals: 31 days + 2 hours.
+	self assert: delta equals: 31 days + 1 hour.
 	^ delta
 ]
 
