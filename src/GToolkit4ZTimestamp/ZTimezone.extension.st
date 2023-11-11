@@ -70,7 +70,12 @@ ZTimezone class >> gtViewCachedTimezonesFor: aView [
 								
 								anActOnEvent beActed ] ];
 					asElement ]
-			tooltip: 'Search cached timezones by id'
+			tooltip: 'Search cached timezones by id';
+		contextItemLabel: 'Set as default image timezone' 
+			action: [ :element :item | 
+				ZTimezone current: item.
+				self inform: ('image timezone set to {1}' format: { item id }).
+				"element phlow update" "Current tab ?" ]
 ]
 
 { #category : #'*GToolkit4ZTimestamp' }
@@ -98,7 +103,8 @@ ZTimezone class >> gtViewCurrentTimezoneIn: composite [
 								ZTimezone current: (ZTimezone id: aString).
 								self inform: ('image timezone set to {1}' format: { aString }).
 								aTab viewContentElement phlow update.
-								anEvent target fireEvent: BrDropdownHideWish new] ] ]
+								anEvent target fireEvent: BrDropdownHideWish new] ] ];
+		actionUpdateButton
 ]
 
 { #category : #'*GToolkit4ZTimestamp' }
@@ -152,7 +158,7 @@ ZTimezone class >> gtViewTimezoneIdentifiersFor: aView [
 			action: [ :element :item | 
 				ZTimezone current: (ZTimezone id: item).
 				self inform: ('image timezone set to {1}' format: { item }).
-				"element phlow update" "current tab ?" ]
+				"element phlow update" "Current tab ?" ]
 ]
 
 { #category : #'*GToolkit4ZTimestamp' }

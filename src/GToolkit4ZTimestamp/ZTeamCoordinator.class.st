@@ -67,8 +67,6 @@ ZTeamCoordinator >> addMember: member [
 { #category : #accessing }
 ZTeamCoordinator >> gtViewMembersFor: aView [
 	<gtView>
-	| now |
-	now := ZTimestamp now.
 	^ aView columnedList
 		title: 'Members';
 		items: (self members sorted: #name ascending);
@@ -77,22 +75,23 @@ ZTeamCoordinator >> gtViewMembersFor: aView [
 		column: 'Date' text: [ :each | 
 			(ZTimestampFormat fromString: '2001-02-03') 
 				timezone: each timezone; 
-				format: now ];
+				format: ZTimestamp now ];
 		column: 'Clock' text: [ :each | 
 			(ZTimestampFormat fromString: '16:05') 
 				timezone: each timezone; 
-				format: now ];
+				format: ZTimestamp now ];
 		column: 'Offset' text: [ :each | 
 			(ZTimestampFormat fromString: '+00:00') 
 				timezone: each timezone; 
-				format: now ];
+				format: ZTimestamp now ];
 		column: 'Difference' text: [ :each | 
 			| difference |
-			difference := (each timezone offsetForTimestamp: now) 
-							- (ZTimezone current offsetForTimestamp: now).
+			difference := (each timezone offsetForTimestamp: ZTimestamp now) 
+							- (ZTimezone current offsetForTimestamp: ZTimestamp now).
 			difference isZero 
 				ifTrue: [ 0 ]
-				ifFalse: [ difference humanReadablePrintString ] ]
+				ifFalse: [ difference humanReadablePrintString ] ];
+		actionUpdateButton
 ]
 
 { #category : #accessing }
