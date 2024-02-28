@@ -43,19 +43,21 @@ ZTeamCoordinator class >> feenk [
 { #category : #accessing }
 ZTeamCoordinator class >> feenkTeamSpecification [
 	^ #(
+	(aliaksei 'Europe/Zurich')
 	(alistair 'Europe/Prague')
 	(andrei 'Europe/Zurich')
+	(don 'America/Chicago')
+	(doru 'Europe/Zurich')
 	(edward 'America/Toronto')
 	(iona 'Europe/Zurich')
 	(john 'America/Chicago')
 	(juraj 'America/Santiago')
-	(doru 'Europe/Zurich')
-	(aliaksei 'Europe/Zurich')
-	(don 'America/Chicago')
 	(manuel 'Europe/Zurich')
+	(milton 'America/La_Paz')
 	(oscar 'Europe/Zurich')
-	(veit 'Europe/Berlin')
+	(simon 'Europe/London')
 	(sven 'Europe/Brussels')
+	(veit 'Europe/Berlin')
 )
 ]
 
