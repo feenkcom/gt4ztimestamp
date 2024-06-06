@@ -1,1 +1,5 @@
-{	"repositories" : {		"github://svenvc/ztimestamp/repository" : "0239d63a0580a001bbc0d8f96763e0c75354a13c"	}}
+{
+	"repositories" : {
+		"github://svenvc/ztimestamp/repository" : "0239d63a0580a001bbc0d8f96763e0c75354a13c"
+	}
+}
