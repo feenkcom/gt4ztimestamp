@@ -61,7 +61,10 @@ GToolkit4ZTimestampExamples class >> sorting [
 { #category : #accessing }
 GToolkit4ZTimestampExamples class >> today [
 	<gtExample>
-	^ self now asBeginOfDay
+	| today |
+	today := self now asBeginOfDay.
+	self assert: today secondsSinceMidnight = 0.
+	^ today
 ]
 
 { #category : #accessing }
