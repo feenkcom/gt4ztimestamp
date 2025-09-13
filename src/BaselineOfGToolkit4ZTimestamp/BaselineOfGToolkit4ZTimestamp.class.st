@@ -35,7 +35,7 @@ BaselineOfGToolkit4ZTimestamp >> baseline: spec [
 	spec for: #'common' do: [
 		spec
 			baseline: 'ZTimestamp' with: [
-				spec repository: 'github://svenvc/ztimestamp:6dad96653c996cc4b3c358f7d5fe47418865e958/repository' ].
+				spec repository: 'github://svenvc/ztimestamp:c900194fbc558cc1d76e77ab47ddbc42f80265b7/repository' ].
 
 		spec package: 'GToolkit4ZTimestamp' with: [
 			spec requires: #(#ZTimestamp) ].
