@@ -1,17 +1,6 @@
 Extension { #name : #ZTimezone }
 
 { #category : #'*GToolkit4ZTimestamp' }
-ZTimezone class >> fallbackZoneinfoDatasetURL [
-	<gtPharoPatch: #Pahro>
-	"The URL to the ZIP archive zoneinfo.zip which is offered as a fallback for 
-	systems (such as Windows) that do no have their own copy of this data. 
-	Note that it is highly recommended that you use such a OS maintained dataset, 
-	as this data is changed (being added to) each year."
-	
-	^ 'https://raw.githubusercontent.com/svenvc/ztimestamp/master/rsrc/zoneinfo.zip' asUrl
-]
-
-{ #category : #'*GToolkit4ZTimestamp' }
 ZTimezone class >> gtActionReloadAllTimezonesFor: anAction [ 
 	<gtClassAction>
 	
